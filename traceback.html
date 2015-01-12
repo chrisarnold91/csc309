@@ -1,0 +1,102 @@
+Environment:
+
+
+Request Method: POST
+Request URL: http://localhost:8080/admin/db/scmtools/repository/add/
+
+Django Version: 1.6.8
+Python Version: 2.7.5
+Installed Applications:
+[u'django.contrib.admin',
+ u'django.contrib.auth',
+ u'django.contrib.contenttypes',
+ u'django.contrib.sites',
+ u'django.contrib.sessions',
+ u'django.contrib.staticfiles',
+ u'djblets',
+ u'djblets.configforms',
+ u'djblets.datagrid',
+ u'djblets.extensions',
+ u'djblets.feedview',
+ u'djblets.gravatars',
+ u'djblets.log',
+ u'djblets.pipeline',
+ u'djblets.siteconfig',
+ u'djblets.util',
+ u'haystack',
+ u'pipeline',
+ u'reviewboard',
+ u'reviewboard.accounts',
+ u'reviewboard.admin',
+ u'reviewboard.attachments',
+ u'reviewboard.changedescs',
+ u'reviewboard.diffviewer',
+ u'reviewboard.extensions',
+ u'reviewboard.hostingsvcs',
+ u'reviewboard.notifications',
+ u'reviewboard.reviews',
+ u'reviewboard.scmtools',
+ u'reviewboard.site',
+ u'reviewboard.webapi',
+ u'django_evolution']
+Installed Middleware:
+[u'django.middleware.gzip.GZipMiddleware',
+ u'reviewboard.admin.middleware.InitReviewBoardMiddleware',
+ u'django.middleware.clickjacking.XFrameOptionsMiddleware',
+ u'django.middleware.common.CommonMiddleware',
+ u'django.middleware.doc.XViewMiddleware',
+ u'django.middleware.http.ConditionalGetMiddleware',
+ u'django.middleware.locale.LocaleMiddleware',
+ u'django.contrib.sessions.middleware.SessionMiddleware',
+ u'django.contrib.auth.middleware.AuthenticationMiddleware',
+ u'django.contrib.messages.middleware.MessageMiddleware',
+ u'djblets.siteconfig.middleware.SettingsMiddleware',
+ u'reviewboard.admin.middleware.LoadSettingsMiddleware',
+ u'djblets.extensions.middleware.ExtensionsMiddleware',
+ u'djblets.log.middleware.LoggingMiddleware',
+ u'reviewboard.accounts.middleware.TimezoneMiddleware',
+ u'reviewboard.admin.middleware.CheckUpdatesRequiredMiddleware',
+ u'reviewboard.admin.middleware.X509AuthMiddleware',
+ u'reviewboard.site.middleware.LocalSiteMiddleware',
+ u'djblets.extensions.middleware.ExtensionsMiddlewareRunner',
+ u'reviewboard.admin.middleware.ExtraExceptionInfoMiddleware']
+
+
+Traceback:
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/core/handlers/base.py" in get_response
+  112.                     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/contrib/admin/options.py" in wrapper
+  466.                 return self.admin_site.admin_view(view)(*args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/utils/decorators.py" in _wrapped_view
+  99.                     response = view_func(request, *args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/views/decorators/cache.py" in _wrapped_view_func
+  52.         response = view_func(request, *args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/contrib/admin/sites.py" in inner
+  198.             return view(request, *args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/utils/decorators.py" in _wrapper
+  29.             return bound_func(*args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/utils/decorators.py" in _wrapped_view
+  99.                     response = view_func(request, *args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/utils/decorators.py" in bound_func
+  25.                 return func(self, *args2, **kwargs2)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/db/transaction.py" in inner
+  371.                 return func(*args, **kwargs)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/contrib/admin/options.py" in add_view
+  1147.             if form.is_valid():
+File "/Users/christopherarnold/Documents/School/reviewboard/src/reviewboard/reviewboard/scmtools/forms.py" in is_valid
+  1039.         if not super(RepositoryForm, self).is_valid():
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/forms/forms.py" in is_valid
+  129.         return self.is_bound and not bool(self.errors)
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/forms/forms.py" in errors
+  121.             self.full_clean()
+File "/Users/christopherarnold/Documents/School/reviewboard/src/reviewboard/reviewboard/scmtools/forms.py" in full_clean
+  825.         super(RepositoryForm, self).full_clean()
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/forms/forms.py" in full_clean
+  273.         self._clean_fields()
+File "/Users/christopherarnold/Documents/School/reviewboard/lib/python2.7/site-packages/Django-1.6.8-py2.7.egg/django/forms/forms.py" in _clean_fields
+  291.                     value = getattr(self, 'clean_%s' % name)()
+File "/Users/christopherarnold/Documents/School/reviewboard/src/reviewboard/reviewboard/scmtools/forms.py" in clean_bug_tracker_hosting_url
+  956.                 field = self.bug_tracker_forms[bug_tracker_type]['default']
+
+Exception Type: KeyError at /admin/db/scmtools/repository/add/
+Exception Value: u'default'
